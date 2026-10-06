@@ -19,14 +19,19 @@ public class triangle {
 	
 		int c = in.nextInt();
 		
-		if(a>b+c  || b>a+c || c>a+b) {
+		if(c<=0 || b<=0 || a<=0) {
+			System.out.print("Error, negative values");
+			return;
+			
+		}
+		
+		else if(a>b+c  || b>a+c || c>a+b) {
 		System.out.println("Not possible to form triangle  ");	
 		return;
 		} else {
 	   System.out.print("You can make a triangle");
 			
 		}
-		
 		
 		
 		

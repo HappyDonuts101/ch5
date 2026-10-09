@@ -1,55 +1,52 @@
 import java.util.Scanner;
 
-
-
 public class Quadratic {
-	
-	public static void main(String[]args) {
-		
-		Scanner in = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int a, b, c;
 
-		System.out.println("Input an integer a:");
-						int a = in.nextInt();
+        System.out.println("Input an integer a");
+        if (!in.hasNextInt()) {
+            System.out.println("Error: " + in.next() + " is not an integer.");
+            return;
+        }
+        a = in.nextInt();
 
-		System.out.println("Input an integer b:");
-				int b = in.nextInt();
+        System.out.println("Input an integer b");
+        if (!in.hasNextInt()) {
+            System.out.println("Error: " + in.next() + " is not an integer.");
+            return;
+        }
+        b = in.nextInt();
 
-		System.out.println("Input an integer c:");
-		
-	
-		int c = in.nextInt();
-		
-		double discriminant = Math.sqrt(Math.pow(b,2) - 4*a*c);
-		
-		
-		
-		
+        System.out.println("Input an integer c");
+        if (!in.hasNextInt()) {
+            System.out.println("Error: " + in.next() + " is not an integer.");
+            return;
+        }
+        c = in.nextInt();
 
-		if(discriminant<0) {
-			System.out.println("Try again! NO solution");
-			return;
-			
-		} else if(discriminant==0) {
-		double zero = -b/ (2*a);
-		 System.out.print("The solution is " + zero);
-			
-		} else {
-			double b2 =-b;
-			double solution = (b2 + discriminant) / (2*a);
-			double solution2 = (b2-discriminant) / (2*a);
-			System.out.println("The solutions is " + solution + " the second solution is " + solution2);
-			
-		}
-		
-		
-		
-		
-		
-		
-	}
-	
-	
+        if (a == 0) {
+            System.out.println("Error: a cannot be 0 (that would divide by zero).");
+            return;
+        }
+
+        int disc = b * b - 4 * a * c;
+
+        if (disc < 0) {
+            System.out.println("No solution.");
+        } else if (disc == 0) {
+            double x = -b / (2.0 * a);
+            System.out.println("One solution: " + x);
+        } else {
+            double root = Math.sqrt(disc);
+            double x1 = (-b + root) / (2.0 * a);
+            double x2 = (-b - root) / (2.0 * a);
+            System.out.println("Two solutions: " + x1 + " and " + x2);
+        }
+    }
+}
 	
 	
 	

@@ -9,12 +9,26 @@ public class triangle {
 
 
 		System.out.println("Input an integer a:");
+        if(!in.hasNextInt()) {
+
+        System.out.println("Error: " + in.next() + " is not an integer.");            return;
+        }
 		int a = in.nextInt();
 
 		System.out.println("Input an integer b:");
+        if(!in.hasNextInt()) {
+
+         System.out.println("Error: " + in.next() + " is not an integer.");
+            return;
+        }
 		int b = in.nextInt();
 
 		System.out.println("Input an integer c:");
+        if(!in.hasNextInt()) {
+
+            System.out.println("Error: " + in.next() + " is not an integer.");
+            return;
+        }
 		
 	
 		int c = in.nextInt();
